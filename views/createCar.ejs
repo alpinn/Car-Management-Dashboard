@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/style.css"">
+    <title>challenge-04</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"></div>
+      <img src="images/burger-icon.png" class="burgerIcon">
+      <ul>
+        <div class="searchFunc">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text"  id="searchBox" placeholder="Search">
+        </div>
+        <button class="searchBtn">Search</button>
+        <img src="images/dropdownProfile.png" class="profile">
+      </ul>
+    </nav>
+
+    <div class="sidebar">
+      <div class="sidebarContent">
+        <div class="sidebarLogo"></div>
+          <div class="sidebarIcon">
+            <ul>
+              <li>
+                <i class="fa-solid fa-house"></i>
+                <h2 id="dashboard">Dashboard</h2>
+              </li>
+              <li>
+                <i class="fa-solid fa-truck"></i>
+                <h2 id="carsText">Cars</h2>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="sideList">
+        <div class="sideList-content">
+          <h2>CARS</h2>
+          <ul>
+            <li>List Cars</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="listHREF">
+        <h4 id="firstList">Cars</h4>
+        <h4 id="firstList"><i class="fa-solid fa-angle-right"></i></h4>
+        <h4 id="firstList">List Car</h4>
+        <h4 id="firstList"><i class="fa-solid fa-angle-right"></i></h4>
+        <h4>Add New Car</h4>
+      </div>
+      <div class="listcarSize">
+        <h1>Add New Car</h1>
+      </div>
+      <div class="formAdd">
+        <form method="post" enctype="multipart/form-data" action="/createCar">
+          <div class="fields">
+            <div class="input-field">
+              <label>Nama</label>
+              <input type="text"  id="" placeholder="Avanza" class="nameCar" name="name">
+            </div>
+            <div class="input-field">
+              <label>Sewa Per Hari</label>
+              <input type="text"  id="" placeholder="Rp 0,-" class="rentCar" name="price">
+            </div>
+            <div class="input-field">
+              <label>Ukuran</label>
+              <input type="text"  id="" placeholder="Small" class="sizeCar" name="size">
+            </div>
+            <div class="input-field">
+              <label>Foto</label>
+              <input type="file"  id="" placeholder="https://placeimg.com/640/480/any" class="imgCar" name="image">
+              <span>File size max. 2MB</span>
+            </div>
+          </div>
+          <div class="addNewButton">
+            <button class="cancelBtn">Cancel</button>
+            <button class="saveBtn" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+    
+    <!-- Script -->
+    <script src="https://kit.fontawesome.com/ba7cfbc847.js" crossorigin="anonymous"></script>
+  </body>
+</html>

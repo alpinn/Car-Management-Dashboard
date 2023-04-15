@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap');
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --prim-blue: #0D28A6;
+  --prim-red: #FA2C5A;
+  --prim-green: #5CB85F;
+  --prim-grey: #CFD4ED;
+} 
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: -999;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  background-color: #F4F5F7;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+.logo{
+  width: 100px;
+  height: 34px;
+  background-color: var(--prim-grey);
+  position: absolute;
+  left: 2em;
+}
+
+.burgerIcon {
+  position: absolute;
+  left: 24em;
+  height: 24px;
+  width: 24px;
+  margin-top: 6px;
+  position: relative;
+  
+}
+
+nav {
+  background-color: white;
+  z-index: 9999;
+  width: 129.7em;
+  position: fixed;
+  margin-left: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .searchFunc {
+    border: 1px solid #D0D0D0;
+    background-color: white;
+    width: 17.4em;
+    height: 3.6em;
+    padding: 0 10px;
+    display: flex;  
+    align-items: center;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.searchFunc .fa-magnifying-glass {
+  font-size: 1.5rem;
+  color: #D0D0D0;
+}
+
+.searchFunc input{
+  border: none;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.searchFunc input:focus {
+  outline: none;
+}
+
+nav .searchBtn {
+  height: 2.6em;
+  background-color: transparent;
+  border: 1px solid var(--prim-blue);
+  border-radius: 2px;
+  padding: 0 10px;
+  font-size: 1.4rem;
+  color: var(--prim-blue);
+  font-weight: 700;
+  position: relative;
+  right: .5em;
+}
+
+.searchFunc , .searchBtn {
+  margin-right: 20px;
+}
+
+nav .profile {
+  margin-right: 35px;
+}
+
+/* Sidebar Content Session */
+.sidebar {
+  display: block;
+  position: fixed;
+  margin: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebarContent {
+
+  background-color: var(--prim-blue);
+  width: 7em;
+  padding: 15px 17px;
+  min-height: 100vh;
+}
+
+.sidebarContent .sidebarLogo {
+  background-color: var(--prim-grey);
+  width: 3.4em;
+  height: 3.4em;
+  margin-bottom: 30px;
+}
+
+.fa-house, .fa-truck {
+  z-index: 999;
+  position: relative;
+  left: .25em;
+  color: white;
+  font-size: 2rem;
+}
+
+.sidebarIcon h2 {
+  z-index: 999;
+  color: white;
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.sidebarIcon #dashboard {
+  position: relative;
+  right: 1em;
+}
+
+.sidebarIcon #carsText {
+  position: relative;
+  left: .3em;
+}
+
+.sidebar .sideList {
+  background-color: white;
+  position: absolute;
+  min-height: 100vh;
+  width: 220px;
+  top: 68px;
+  margin-left: 70px;
+}
+
+.sideList-content {
+  padding: 30px 20px;
+  margin: 0;
+}
+
+.sideList-content h2 {
+  font-size: 1.4rem;
+  color: #8A8A8A;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.sideList-content li {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Content Session */
+.container {
+  z-index: 999;
+  margin-left: 290px;
+  display: block;
+  position: relative;
+  width: 78.8%;
+  padding: 90px 1.7vw;
+}
+
+.listHREF {
+  margin: 10px 0;
+  
+}
+
+.listHREF h4 {
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 18px;
+}
+
+.listHREF h4#firstList {
+  font-weight: 700;
+}
+
+button.addNew {
+  float: right;
+  background-color: var(--prim-blue);
+  border: none;
+  color: white;
+  font-weight: 700;
+  width: 140px;
+  height: 36px;
+  text-align: right;
+  padding: 8px 12px;
+  margin-top: 20px;
+}
+
+button .fa-plus {
+  margin-right: 20px;
+}
+
+.listcarSize h1{
+  margin: 25px 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.listcarSize button{
+  padding: 8px;
+  border: 1px solid #AEB7E1;
+  background-color: white;
+  color: #AEB7E1;
+  margin-right: 15px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.listcarSize button.buttonALL {
+  border: 1px solid var(--prim-blue);
+  color: var(--prim-blue);
+  background-color: #CFD4ED;
+  font-size: 1.4rem;
+}
+
+.formAdd {
+  width: 1020px;
+  background: white;
+  padding: 15px;
+}
+
+.input-field label, .input-field input{
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.input-field input {
+  width: 339px;
+  padding: 8px;
+  border: 1px solid #D0D0D0;
+}
+
+.nameCar {
+  margin-left: 100px;
+}
+
+.rentCar {
+  margin-left: 56px;
+}
+
+.sizeCar {
+  margin-left: 93px;
+}
+
+.imgCar {
+  margin-left: 107px;
+}
+
+.input-field span {
+  display: block;
+  color: #8A8A8A;
+  font-size: 1rem;
+  padding-left: 135px;
+}
+
+.addNewButton {
+  margin-top: 130px;
+}
+
+.addNewButton button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.cancelBtn {
+  color: var(--prim-blue);
+  border: 1px solid #0D28A6;
+  border-radius: 2px;
+  margin-right: 15px;
+}
+
+.saveBtn {
+  border: none;
+  background-color: var(--prim-blue);
+  border-radius: 2px;
+  color: white;
+}
+
