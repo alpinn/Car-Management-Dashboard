@@ -18,7 +18,6 @@ This project is about implemetation of Database, Orm and Restful API.
 8. nodemon
 9. pg
 10. sequelize
-11. uuid
 
 ## How To Run
 
