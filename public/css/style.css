@@ -24,7 +24,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  z-index: -999;
+  z-index: 1;
 }
 
 html {
@@ -170,7 +170,7 @@ nav .profile {
 }
 
 .fa-house, .fa-truck {
-  z-index: 999;
+  z-index: 5;
   position: relative;
   left: .25em;
   color: white;
@@ -178,7 +178,7 @@ nav .profile {
 }
 
 .sidebarIcon h2 {
-  z-index: 999;
+  z-index: 5;
   color: white;
   font-weight: 300;
   font-size: 1.2rem;
@@ -224,7 +224,7 @@ nav .profile {
 
 /* Content Session */
 .container {
-  z-index: 999;
+  z-index: 7;
   margin-left: 290px;
   display: block;
   position: relative;
@@ -250,8 +250,8 @@ nav .profile {
 }
 
 button.addNew {
-  float: right;
   background-color: var(--prim-blue);
+  float: right;
   border: none;
   color: white;
   font-weight: 700;
@@ -353,3 +353,57 @@ button .fa-plus {
   color: white;
 }
 
+.row {
+  display: flex;
+  margin-top: 50px;
+}
+
+.col {
+  background-color: white;
+  margin-right: 30px;
+  width: 300px;
+  padding: 20px;
+}
+
+.card .cardDesc {
+  font-size: 1.4rem;
+  padding-top: 20px;
+  
+}
+
+.card img {
+  background-size: cover;
+}
+
+.card p {
+  margin-bottom: 8px;
+}
+
+.card .prizeCar {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.deleteBtn {
+  cursor: pointer;
+  border: 1px solid #FA2C5A;
+  padding: 10px;
+  color: #FA2C5A;
+  font-weight: 700;
+  background-color: white;
+}
+
+.updateBtn {
+  border:  none;
+  background-color: #5CB85F;
+  padding: 10px;
+  color: white;
+  font-weight: 700;
+  position: relative;
+  left: 180px;
+  bottom: 37px;
+}
+
+.form {
+  z-index: 999999;
+}
