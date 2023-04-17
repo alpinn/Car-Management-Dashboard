@@ -1,7 +1,6 @@
 const express = require("express");
 const PORT = process.env.PORT || 8000;
 const router = require("./routes/routes.js");
-// const middleware = require("./middleware");
 const cors = require("cors");
 const app = express();
 const path = require("path");
@@ -16,24 +15,26 @@ const cloudinary = require("./cloudinary/cloudinary.js");
 app.use(express.json());
 app.set("views", viewPath);
 app.set("view engine", "ejs");
-const PUBLIC_DIRECTORY = path.join(__dirname, "public");
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(router);
-
 app.use(express.static(publicPath));
 
+// Ini yang baru
+//Home
 app.get("/", async (req, res) => {
   const car = await cars.findAll();
-  res.render("index", { cars: car });
+  return res.render("index", { cars: car });
 });
 
+// Create Page
 app.get("/createCar", (req, res) => {
-  res.render("createCar");
+  return res.render("createCar");
 });
 
+// Create Process
 app.post("/createCar", uploadOnMemory.single("image"), (req, res) => {
   console.log(req.file);
   const fileBase64 = req.file.buffer.toString("base64");
@@ -50,24 +51,17 @@ app.post("/createCar", uploadOnMemory.single("image"), (req, res) => {
     const { name, price, size } = req.body;
 
     const car = await cars.create({ name, price, size, image: result.url });
-    // req.flash('info', 'Car succesfully created');
-    res.redirect("/");
+    return res.redirect("/");
   });
-  // res.("createCar")
 });
 
+// Update Page
 app.get("/updateCar/:id", async (req, res) => {
   const car = await cars.findOne({ where: { id: req.params.id } });
-  res.render("updateCar", { car: car });
+  return res.render("updateCar", { car: car });
 });
 
-app.get("/:id", async (req, res) => {
-  const id = req.params.id;
-  await cars.destroy({ where: { id } });
-  // req.flash('delete', 'Car succesfully deleted');
-  res.redirect("/");
-});
-
+// Update Process
 app.post("/updateCar/:id", uploadOnMemory.single("image"), async (req, res) => {
   const idCar = req.params.id;
   if (!req.file) {
@@ -93,16 +87,16 @@ app.post("/updateCar/:id", uploadOnMemory.single("image"), async (req, res) => {
       { name, price, size, image: result.url },
       { where: { id: idCar } }
     );
-    // req.flash('info', 'Car succesfully updated');
-    res.redirect("/");
+    return res.redirect("/");
   });
 });
 
-// app.post("/cars", handler.handleCreateCar);
-// app.get("/cars", handler.handleListCars);
-// app.get("/cars/:id", middleware.setCar, handler.handleGetCar);
-// app.put("/cars/:id", middleware.setCar, handler.handleUpdateCar);
-// app.delete("/cars/:id", middleware.setCar, handler.handleDeleteCar);
+// Delete Process
+app.get("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+  await cars.destroy({ where: { id } });
+  return res.redirect("/");
+});
 
 app.listen(PORT, () => {
   console.log(`Server listen on port http://localhost:${PORT}`);
